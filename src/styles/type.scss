@@ -1,0 +1,15 @@
+.type-list {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+.type-item {
+  border-radius: $radius-large;
+  background: $dark;
+  color: $white;
+  display: inline-block;
+  font-size: $small-size;
+  padding: 2px 8px;
+  line-height: 1rem;
+}
