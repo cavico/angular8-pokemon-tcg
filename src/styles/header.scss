@@ -6,6 +6,10 @@
 
   >h1 {
     margin: 0;
-    font-size: $h1-size;
+    font-size: $h2-size;
+
+    @media screen and (min-width: $screen-sm-min) {
+      font-size: $h1-size;
+    }
   }
 }

@@ -1,7 +1,10 @@
 .type-list {
-  float: right;
   margin: 0;
   padding: 0;
+
+  @media screen and (min-width: $screen-sm-min) {
+    float: right;
+  }
 }
 
 .type-item {

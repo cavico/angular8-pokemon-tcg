@@ -14,7 +14,11 @@
   padding: $spacing-small;
   flex: 0 1 auto;
   align-self: auto;
-  width: 50%;
+  width: 100%;
+
+  @media screen and (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+    width: 50%;
+  }
 
   @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     width: 33%;
