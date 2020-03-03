@@ -26,6 +26,7 @@ export interface Card {
   text: string[];
   types: string[];
   weaknesses: IWeakness[];
+  card?: Card;
 }
 
 export interface IAbility {
