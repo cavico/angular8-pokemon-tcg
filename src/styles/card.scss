@@ -22,3 +22,43 @@
 .card-description {
   margin: $spacing-small 0 $spacing-large;
 }
+
+.card-detail {
+  padding: $spacing-small;
+  margin: 0;
+
+  @media screen and (min-width: $screen-sm-min) {
+    display: flex;
+  }
+
+  .card-figure {
+    @media screen and (min-width: $screen-sm-min) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+      width: 33%;
+    }
+  }
+
+  .card-detail-info {
+    @media screen and (min-width: $screen-sm-min) {
+      width: 50%;
+
+      margin-top: $spacing-large * 1.5;
+      padding-left: $spacing-large;
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+      width: 67%;
+    }
+
+    @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      // width: 25%;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      // width: 20%;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.cols-md {
+  @media screen and (min-width: $screen-md-min) {
+    display: flex;
+    margin: $spacing-small * -1;
+
+    >.col {
+      padding-left: $spacing-small;
+      padding-right: $spacing-small;
+    }
+  }
+}

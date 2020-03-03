@@ -13,13 +13,34 @@ html {
 }
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
-h4,
-h5,
-h6 {
+.h3 {
   font-family: $header-font;
   font-weight: 700;
+}
+
+h1,
+.h1 {
+  font-size: $h1-size;
+}
+
+h2,
+.h2 {
+  font-weight: 300;
+  font-size: $h2-size;
+}
+
+h3,
+.h3 {
+  font-size: $h3-size;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
 }
 
 #wrapper {

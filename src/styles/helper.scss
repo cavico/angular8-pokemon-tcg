@@ -1,3 +1,6 @@
+$float: left,
+right;
+
 $align: 'left',
 'center',
 'right';
@@ -8,10 +11,38 @@ $align: 'left',
   }
 }
 
+@each $property in $float {
+  @media screen and (min-width: $screen-sm-min) {
+    .#{$property}-floated {
+      float: $property;
+    }
+  }
+}
+
+
 .primary {
   color: $primary;
 }
 
+.is-white {
+  color: $white;
+}
+
+.is-seamless {
+  text-decoration: none;
+}
+
 .is-routerLink {
   cursor: pointer;
+}
+
+.list-clear {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spaced-vertical {
+  margin-top: $spacing-small;
+  margin-bottom: $spacing-small;
 }
