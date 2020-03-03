@@ -1,4 +1,20 @@
 .card {
   display: block;
   margin: 0;
+
+  >img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius-large;
+    overflow: hidden;
+    display: block;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+    transition: transform .2s, box-shadow .1s;
+
+  }
+
+  &:hover>img {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.061);
+  }
 }

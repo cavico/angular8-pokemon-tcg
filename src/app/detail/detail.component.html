@@ -1,4 +1,17 @@
-<header>
+<div *ngIf="item$ | async as item; else loadingBlock">
+  <h1 *ngIf="item;else emptyBlock">
+    {{ item.name }}
+  </h1>
+  <ng-template #emptyBlock>
+    Card not found
+  </ng-template>
+</div>
+<ng-template #loadingBlock>
+  <label class="loader center-aligned">
+    <progress aria-label="Loading card…"></progress>
+  </label>
+</ng-template>
+<!-- <header>
   <h1>Pokémon Name</h1>
 </header>
 <main>
@@ -18,4 +31,4 @@
     <li>Resistencia(s)</li>
     <li>Fraqueza(s)</li>
   </ul>
-</main>
+</main> -->

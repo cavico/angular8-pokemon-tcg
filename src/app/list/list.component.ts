@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CardsService } from 'src/app/services/cards.service';
-import { Cards, Card } from 'src/app/common/interface';
+import { Card } from 'src/app/common/interface';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ export class ListComponent {
   constructor(
     private cardsService: CardsService
   ) {
-    this.items$ = cardsService.getAll();
+    this.items$ = cardsService.getAll('Pokémon');
   }
 
   trackByFn(index: number, item: Card) {

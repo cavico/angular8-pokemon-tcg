@@ -1,1 +1,17 @@
+$align: 'left',
+'center',
+'right';
 
+@each $property in $align {
+  .#{$property}-aligned {
+    text-align: $property;
+  }
+}
+
+.primary {
+  color: $primary;
+}
+
+.is-routerLink {
+  cursor: pointer;
+}

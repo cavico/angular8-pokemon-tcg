@@ -1,13 +1,35 @@
-<div *ngIf="items$ | async as items; else loadingBlock">
-  <ul *ngIf="items.length>0;else emptyBlock">
-    <li *ngFor="let item of items; trackBy: trackByFn">
-      {{ item.name }}
-    </li>
-  </ul>
-  <ng-template #emptyBlock>
-    No results
+<header class="header">
+  <h1>Pokémon</h1>
+</header>
+<main>
+  <div *ngIf="items$ | async as items; else loadingBlock">
+    <ol *ngIf="items.length>0;else emptyBlock" class="list">
+      <li *ngFor="let item of items; trackBy: trackByFn" class="list-item">
+        <figure class="card is-routerLink" [routerLink]="[item.id]" routerLinkActive="router-link-active">
+          <img src="./assets/card-back.png" [src]="item.imageUrl" alt="#card-id#">
+          <figcaption>
+            <strong class="primary">
+              {{ item.name }}
+            </strong>
+            <code>
+              {{ item.id }}
+            </code>
+            <ul class="type-list">
+              <li class="type-item" *ngFor="let type of item.types">
+                {{ type }}
+              </li>
+            </ul>
+          </figcaption>
+        </figure>
+      </li>
+    </ol>
+    <ng-template #emptyBlock>
+      No results
+    </ng-template>
+  </div>
+  <ng-template #loadingBlock>
+    <label class="loader center-aligned">
+      <progress aria-label="Loading cards…"></progress>
+    </label>
   </ng-template>
-</div>
-<ng-template #loadingBlock>
-  Loading...
-</ng-template>
+</main>

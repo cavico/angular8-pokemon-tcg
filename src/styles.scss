@@ -28,8 +28,11 @@ $screen-md-max: 1123px;
 $screen-lg-min: 1124px;
 
 @import //
+'./styles/init',
+'./styles/header',
 './styles/search',
 './styles/list',
 './styles/card',
-'./styles/helper'
-;
+'./styles/loader',
+'./styles/type',
+'./styles/helper';
