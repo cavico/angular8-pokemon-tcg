@@ -48,7 +48,7 @@ export class ListComponent {
     return a.name < b.name ? -1 : 1;
   }
 
-  onSearch(event: any) {
+  onSearch() {
     this.getData(this.search);
   }
 
