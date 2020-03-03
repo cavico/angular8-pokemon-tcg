@@ -1,0 +1,46 @@
+.loader {
+  display: block;
+
+  /* reset */
+  progress:indeterminate {
+    appearance: none;
+    display: block;
+    margin: 1em auto;
+    background: none;
+    width: 1em;
+    height: 1em;
+    border: 0;
+
+    &::-moz-progress-bar {
+      background: none;
+    }
+
+    &::-webkit-progress-bar {
+      display: none;
+    }
+
+    &::-ms-fill {
+      animation-name: none;
+    }
+  }
+
+  progress:indeterminate {
+    border: 10px solid;
+    border-color: $primary transparent transparent;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: loaderSpin 1s linear infinite;
+  }
+
+}
+
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
