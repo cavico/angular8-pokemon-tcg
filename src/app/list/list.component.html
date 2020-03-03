@@ -3,7 +3,7 @@
 </header>
 <main>
   <div *ngIf="items$ | async as items; else loadingBlock">
-    <div *ngIf="items.length>0;else emptyBlock" class="list">
+    <div *ngIf="items.length>0;else emptyBlock" class="list list-clear">
       <app-list-item [data]="item" *ngFor="let item of items; trackBy: trackByFn" class="list-item">
       </app-list-item>
     </div>

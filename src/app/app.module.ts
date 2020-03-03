@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import { EnergyComponent } from './energy/energy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     DetailComponent,
-    ListItemComponent
+    ListItemComponent,
+    EnergyComponent
   ],
   imports: [
     BrowserModule,
