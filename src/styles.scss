@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
 
 $primary: #E3350D;
-$body-bg: #dddddd;
+$secondary: #444444;
+$body-bg: #eeeeee;
 $white: #ffffff;
-$dark: #333333;
+
 $body-font: 'Open Sans',
 'sans-serif';
 $header-font: 'Open Sans',
 'sans-serif';
+
 $h1-size: 4rem;
-$h2-size: 3rem;
-$h3-size: 2rem;
+$h2-size: 1.5rem;
+$h3-size: 1rem;
 $small-size: 0.75rem;
 
 $spacing-large: 2rem;
@@ -22,7 +24,6 @@ $radius-small: 3px;
 
 $screen-xs-min: 360px;
 $screen-xs-max: 649px;
-
 $screen-sm-min: 650px;
 $screen-sm-max: 1023px;
 $screen-md-min: 1024px;
@@ -31,10 +32,11 @@ $screen-lg-min: 1124px;
 
 @import //
 './styles/init',
+'./styles/column',
 './styles/header',
 './styles/search',
 './styles/list',
 './styles/card',
 './styles/loader',
-'./styles/type',
+'./styles/energy',
 './styles/helper';
