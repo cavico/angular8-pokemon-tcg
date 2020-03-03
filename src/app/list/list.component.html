@@ -1,0 +1,13 @@
+<div *ngIf="items$ | async as items; else loadingBlock">
+  <ul *ngIf="items.length>0;else emptyBlock">
+    <li *ngFor="let item of items; trackBy: trackByFn">
+      {{ item.name }}
+    </li>
+  </ul>
+  <ng-template #emptyBlock>
+    No results
+  </ng-template>
+</div>
+<ng-template #loadingBlock>
+  Loading...
+</ng-template>
