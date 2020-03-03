@@ -1,34 +1,130 @@
 <div *ngIf="item$ | async as item; else loadingBlock">
-  <h1 *ngIf="item;else emptyBlock">
-    {{ item.name }}
-  </h1>
+  <div *ngIf="item;else emptyBlock">
+    <header class="header">
+      <h1>
+        <a [routerLink]="['/']" class="is-routerLink is-white is-seamless" aria-label="Go back">
+          &lsaquo;
+        </a>
+        <strong>
+          {{ item.name }}
+        </strong>
+        <code>
+          {{ item.id }}
+        </code>
+      </h1>
+    </header>
+    <main>
+      <figure class="card-detail">
+        <div class="card-figure">
+          <img src="./assets/card-back.png" [attr.src]="item.imageUrlHiRes" [alt]="item.name">
+        </div>
+        <figcaption class="card-detail-info">
+          <dl>
+            <div>
+              <dt class="h2">
+                Attack list
+              </dt>
+              <dd class="list-clear">
+                <div *ngIf="item.attacks; let attacks; else noAttacks">
+                  <p class="spaced-vertical" *ngFor="let attack of attacks">
+                    <app-energy *ngFor="let cost of attack.cost" [data]="cost"></app-energy>
+                    <strong class="h3">
+                      {{ attack.name }}
+                    </strong>
+                    <br>
+                    <!-- {{ attack.damage }} -->
+                    <cite>
+                      <small>
+                        {{ attack.text }}
+                      </small>
+                    </cite>
+                  </p>
+                </div>
+                <ng-template #noAttacks>
+                  No attacks available
+                </ng-template>
+              </dd>
+            </div>
+
+
+
+
+            <div class="cols-md spaced-vertical">
+              <div class="col">
+                <dt class="h2">
+                  Type(s)
+                </dt>
+                <dd class="list-clear">
+                  <ul class="list-clear spaced-vertical" *ngIf="item.types; let types; else noTypes">
+                    <li *ngFor="let type of types">
+                      <app-energy [data]="type"></app-energy>
+                    </li>
+                  </ul>
+                  <ng-template #noTypes>
+                    <p class="spaced-vertical">
+                      N/A
+                    </p>
+                  </ng-template>
+                </dd>
+              </div>
+              <div class="col">
+                <dt class="h2">
+                  Resistances
+                </dt>
+                <dd class="list-clear">
+                  <ul class="list-clear spaced-vertical" *ngIf="item.resistances; let resistances; else noResistances">
+                    <li *ngFor="let resistance of resistances">
+                      <app-energy [data]="resistance.type"></app-energy>
+                      ({{ resistance.value }})
+                    </li>
+                  </ul>
+                  <ng-template #noResistances>
+                    <p class="spaced-vertical">
+                      N/A
+                    </p>
+                  </ng-template>
+                </dd>
+              </div>
+              <div class="col">
+                <dt class="h2">
+                  Weakness
+                </dt>
+                <dd class="list-clear">
+                  <ul class="list-clear spaced-vertical" *ngIf="item.weaknesses; let weaknesses; else noWeaknesses">
+                    <li *ngFor="let weakness of weaknesses">
+                      <app-energy [data]="weakness.type"></app-energy>
+                      ({{ weakness.value }})
+                    </li>
+                  </ul>
+                  <ng-template #noWeaknesses>
+                    <p class="spaced-vertical">
+                      N/A
+                    </p>
+                  </ng-template>
+                </dd>
+              </div>
+            </div>
+          </dl>
+        </figcaption>
+      </figure>
+    </main>
+  </div>
   <ng-template #emptyBlock>
     Card not found
   </ng-template>
 </div>
 <ng-template #loadingBlock>
+  <header class="header">
+    <h1>
+      <a [routerLink]="['/']" class="is-routerLink is-white is-seamless" aria-label="Go back">
+        &lsaquo;
+      </a>
+      <strong>
+        Loading Pokémon
+      </strong>
+    </h1>
+  </header>
   <label class="loader center-aligned">
     <progress aria-label="Loading card…"></progress>
   </label>
 </ng-template>
-<!-- <header>
-  <h1>Pokémon Name</h1>
-</header>
-<main>
-  <ul>
-    <li>Imagem em alta definição</li>
-    <li>Nome</li>
-    <li>ID do Pokemon</li>
-    <li>Tipo(s)</li>
-    <li>Lista de ataques com:
-      <ul>
-        <li>Custo de “mana”</li>
-        <li>Nome</li>
-        <li>Dano</li>
-        <li>Descrição</li>
-      </ul>
-    </li>
-    <li>Resistencia(s)</li>
-    <li>Fraqueza(s)</li>
-  </ul>
-</main> -->
