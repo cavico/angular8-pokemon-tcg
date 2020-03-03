@@ -1,4 +1,30 @@
 .list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.list-item {
+  padding: $spacing-small;
+  flex: 0 1 auto;
+  align-self: auto;
+  width: 50%;
+
+  @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    width: 33%;
+  }
+
+  @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    width: 25%;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    width: 20%;
+  }
 }
