@@ -1,5 +1,8 @@
 <header class="header">
   <h1>Pokémon</h1>
+  <form (ngSubmit)="onSearch()" class="search">
+    <input [(ngModel)]="search" name="search" #ctrl="ngModel" class="h1" placeholder="Search&hellip;">
+  </form>
 </header>
 <main>
   <div *ngIf="items$ | async as items; else loadingBlock">
@@ -8,7 +11,11 @@
       </app-list-item>
     </div>
     <ng-template #emptyBlock>
-      No results
+      <div class="alert h1" role="alert">
+        <strong>
+          No results
+        </strong>
+      </div>
     </ng-template>
   </div>
   <ng-template #loadingBlock>

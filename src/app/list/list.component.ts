@@ -12,11 +12,24 @@ import { map } from 'rxjs/operators';
 export class ListComponent {
 
   items$: Observable<Card[]>;
+  search = '';
+
 
   constructor(
     private cardsService: CardsService
   ) {
-    this.items$ = cardsService.getAll('Pokémon')
+    this.getData();
+  }
+
+  getData(name?: string) {
+    const params: any = {};
+
+    params.supertype = 'Pokémon';
+    if (name) {
+      params.name = name;
+    }
+
+    this.items$ = this.cardsService.getAll(params)
       .pipe(
         map(
           (data: Card[]) => {
@@ -33,6 +46,10 @@ export class ListComponent {
 
   sortByName(a: Card, b: Card) {
     return a.name < b.name ? -1 : 1;
+  }
+
+  onSearch(event: any) {
+    this.getData(this.search);
   }
 
 }

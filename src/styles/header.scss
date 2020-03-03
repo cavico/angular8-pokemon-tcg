@@ -4,13 +4,15 @@
   margin-bottom: $spacing-large * -2;
   padding: $spacing-large $spacing-small ($spacing-large * 2);
   border-bottom: 10px solid $secondary;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: flex-start;
+
 
   >h1 {
     margin: 0;
-    font-size: $h2-size;
-
-    @media screen and (min-width: $screen-sm-min) {
-      font-size: $h1-size;
-    }
   }
 }
