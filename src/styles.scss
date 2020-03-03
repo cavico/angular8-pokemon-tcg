@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
+
+$primary: #E3350D;
+$body-bg: #dddddd;
+$white: #ffffff;
+$dark: #333333;
+$body-font: 'Open Sans',
+'sans-serif';
+$header-font: 'Open Sans',
+'sans-serif';
+$h1-size: 4rem;
+$h2-size: 3rem;
+$h3-size: 2rem;
+$small-size: 0.75rem;
+
+$spacing-large: 2rem;
+$spacing-small: 1rem;
+
+$radius-large: 10px;
+$radius-medium: 5px;
+$radius-small: 3px;
+
+$screen-xs-max: 690px;
+$screen-sm-min: 691px;
+$screen-sm-max: 1023px;
+$screen-md-min: 1024px;
+$screen-md-max: 1123px;
+$screen-lg-min: 1124px;
+
 @import //
 './styles/search',
 './styles/list',
